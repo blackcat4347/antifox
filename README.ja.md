@@ -6,7 +6,7 @@
 
 偵察からレポート納品まで — マルチエージェントによる自律実行 · 完全な可観測性 · インタラクティブ · 納品可能
 
-[中文](README.md) | [English](README.en.md) | 日本語
+[简体中文](README.zh-CN.md) | [English](README.md) | 日本語
 
 [![License](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/AntiFox-AI/antifox?color=success)](https://github.com/AntiFox-AI/antifox/releases/latest)
