@@ -36,14 +36,22 @@ func renderSystem(agentKey, def string, vars any) string {
 		}
 	}
 	if out, err := renderTmpl(tmpl, vars); err == nil {
-		return out
+		return out + englishDirective
 	}
 	// DB template broke (e.g. references an out-of-catalog var) → code default.
 	if out, err := renderTmpl(def, vars); err == nil {
-		return out
+		return out + englishDirective
 	}
-	return def
+	return def + englishDirective
 }
+
+// englishDirective is the code-owned language mandate appended to EVERY agent
+// system prompt rendered through renderSystem — it cannot be edited away from
+// the UI. The platform's working language is English: all reasoning, intents,
+// facts, findings, summaries and user-facing replies are written in English,
+// regardless of the language of any prompt segment, tool description, or skill
+// guidance fed to the model (some built-in ones remain Chinese for now).
+const englishDirective = "\n\n**Language**: English is this platform's working language. ALL output — reasoning, intent summaries, facts, findings, and replies to the user — MUST be written in English. Keep raw technical evidence (requests, responses, command output) verbatim as captured."
 
 func renderTmpl(tmpl string, vars any) (string, error) {
 	t, err := template.New("p").Option("missingkey=error").Parse(tmpl)

@@ -14,7 +14,7 @@ export const LANGS = [
 
 export type LangCode = (typeof LANGS)[number]["code"];
 
-export const DEFAULT_LANG: LangCode = "zh-CN";
+export const DEFAULT_LANG: LangCode = "en-US";
 export const LANG_STORAGE_KEY = "antifox-lang";
 
 export function isLangCode(v: string | null | undefined): v is LangCode {
