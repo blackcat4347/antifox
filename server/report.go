@@ -259,7 +259,7 @@ func (s *Server) buildReportInput(t *Task, q map[string][]string) *report.GenInp
 
 		ReportTitle:   get("title"), // empty → BuildDoc applies locale-aware "<project> <报告词>"
 		Version:       defaultStrSrv(get("version"), "V1.0"),
-		Locale:        defaultStrSrv(locale, "zh-CN"),
+		Locale:        defaultStrSrv(locale, "en-US"),
 		CVSSVersion:   cvss,
 		LogoPath:      logoPath,
 		Personnel:     personnel,
